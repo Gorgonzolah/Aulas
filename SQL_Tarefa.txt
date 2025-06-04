@@ -1,0 +1,49 @@
+🧠 CENÁRIO
+    Você vai criar um pequeno banco de dados para um sistema de entregas de uma hamburgueria.
+
+🟦 Tabela: estado
+    id – auto_increment
+    nome – tamanho(100), obrigatório
+    sigla – tamanho(2), deve ser única
+
+🟦 Tabela: cidade
+    id – auto_increment
+    descricao – tamanho(100), obrigatório
+    estado_id – obrigatório, chave estrangeira para estado
+
+🟩 Tabela: cliente
+    id – auto_increment
+    nome – tamanho(100), obrigatório
+    email – tamanho(100), deve ser único
+    data_nascimento – tipo date, pode ser nulo
+    genero – char(1), só aceita ‘M’ ou ‘F’
+    estado_civil – char(1), padrão é ‘S’
+    cidade_id – chave estrangeira para cidade, obrigatório
+
+🟫 Tabela: produto
+    id – auto_increment
+    nome – tamanho(100), obrigatório
+    valor – tipo decimal(10,2), obrigatório
+    ativo – tipo tinyint, padrão é 1
+
+🟥 Tabela: pedido
+    id – auto_increment
+    cliente_id – chave estrangeira para cliente, obrigatório
+    data_hora – tipo datetime, padrão é CURRENT_TIMESTAMP
+
+🟨 Tabela: pedido_produto
+    pedido_id – chave estrangeira para pedido
+    produto_id – chave estrangeira para produto
+    quantidade – tipo inteiro, obrigatório
+    valor_unitario – tipo decimal(10,2), obrigatório
+    Chave primária composta: pedido_id + produto_id
+
+✅ REGRAS GERAIS:
+    Todas as chaves primárias devem ter auto_increment.
+    Toda FK deve usar:
+    ON DELETE NO ACTION ON UPDATE NO ACTION
+    CHECK no campo genero, aceitando somente ‘M’ ou ‘F’.
+    DEFAULT no campo estado_civil, valor ‘S’.
+    Campos obrigatórios devem ser NOT NULL.
+    Campos únicos devem ter UNIQUE.
+    Formatação e nomes devem seguir padrão legível (snake_case ou todo minúsculo).
