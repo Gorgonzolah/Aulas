@@ -37,13 +37,3 @@
     quantidade – tipo inteiro, obrigatório
     valor_unitario – tipo decimal(10,2), obrigatório
     Chave primária composta: pedido_id + produto_id
-
-✅ REGRAS GERAIS:
-    Todas as chaves primárias devem ter auto_increment.
-    Toda FK deve usar:
-    ON DELETE NO ACTION ON UPDATE NO ACTION
-    CHECK no campo genero, aceitando somente ‘M’ ou ‘F’.
-    DEFAULT no campo estado_civil, valor ‘S’.
-    Campos obrigatórios devem ser NOT NULL.
-    Campos únicos devem ter UNIQUE.
-    Formatação e nomes devem seguir padrão legível (snake_case ou todo minúsculo).
